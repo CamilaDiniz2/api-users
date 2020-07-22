@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@400;700&display=swap');
+
+body {
+  background-color: #242121;
+  color: #f4f4f4;
+  font-family: 'Noto Sans HK', sans-serif;
+}
+
+.mainArea {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainArea h1 {
+  font-size: 36px;
+  line-height: 150%;
+  font-weight: 700;
+}
+
+.mainArea p {
+  font-size: 24px;
+  line-height: 120%;
+  font-weight: 400;
+}
+
+.inputArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputArea input[type='text'] {
+  width: 500px;
+  width: 50vw;
+  height: 36px;
+  outline: none;
+  border-radius: 8px;
+}
+
+.inputArea button[type='button'] {
+  height: 32px;
+  width: 10vw;
+  border: none;
+  background-color: #35d80d;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-left: 16px;
+
+  cursor: pointer;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.inputArea button[type='button']:hover {
+  opacity: 0.8;
+  transition: 100ms;
+}
+.results h2 {
+  font-size: 30px;
+  line-height: 150%;
+  margin-left: 32px;
+}
+#resultsStatisticsTab {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 16px;
+}
+
+#resultsStatisticsTab h4 {
+  width: 200px;
+  height: 150px;
+  background-color: #35d80d;
+  border-top-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+  margin: 8-px;
+
+  color: #000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  text-align: center;
+
+  font-size: 20px;
+}
+
+#resultsStatisticsTab h4 span {
+  margin-top: 8px;
+  background-color: #a0b19ca2;
+  font-size: 28px;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.filterUsers {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.filterUsers .user {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  background-color: #35d80d;
+  border-top-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+  margin: 32px;
+
+  color: #000;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.user:hover {
+  position: relative;
+  top: -4px;
+  left: -4px;
+  box-shadow: 4px 4px 4px #35d80d;
+}
+
+.filterUsers .user img {
+  max-width: 70px;
+  height: 60px;
+  border-radius: 50%;
+  border: 5px solid #242121;
+  margin-right: 8px;
+}
+
+.filterUsers .user .usersInfo {
+  padding-left: 8px;
+  border-left: 2px solid #000;
+}

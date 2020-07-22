@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search for a name</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="mainArea">
+      <h1>Encontre usuários</h1>
+      <p>Digite o nome do usuário que deseja encontrar:</p>
+      <div class="inputArea">
+        <input type="text" id="inputText" placeholder="Digite o nome..." />
+        <button type="button">Enter</button>
+      </div>
+    </div>
+
+    <div class="results">
+      <h2>Statistics:</h2>
+      <div id="resultsStatisticsTab">
+        <h4>Total filtered Users: <span id="totalFilteredUsers"></span></h4>
+        <h4>Number of Men: <span id="numberOfMen"></span></h4>
+        <h4>Number of Women: <span id="numberOfWomen"></span></h4>
+        <h4>Sum of Ages: <span id="sumOfAges"></span></h4>
+        <h4>Mean of Ages: <span id="meanOfAges"></span></h4>
+      </div>
+      <div id="filteredUsersTab"></div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
