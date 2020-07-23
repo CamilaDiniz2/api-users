@@ -51,13 +51,13 @@ function render() {
 
 function renderFilterUsers() {
   let filteredUsersHTMl =
-    '<h2> Filtered Users:</h2> <div class="filterUsers"> ';
+    '<h2> Filtered Users...</h2> <div class="filterUsers"> ';
 
   filteredUsers.forEach((user) => {
     const { fullName, gender, picture, age } = user;
 
     const filterUser = `
-      <div class="user">
+      <div class="user col-3">
         <img src="${picture}" >
         <div class="usersInfo">
           <p> Name: ${fullName}</p>
@@ -95,19 +95,28 @@ function renderStatistics() {
   let meanOfAgesCalculation = filteredUsers.reduce((acc, curr) => {
     return acc + curr.age;
   }, 0);
-  meanOfAgesCalculation = meanOfAgesCalculation / filteredUsers.length;
+
+  // Testa se o vetor está vazio
+  filteredUsers.length == 0
+    ? (meanOfAgesCalculation = 0)
+    : (meanOfAgesCalculation = meanOfAgesCalculation / filteredUsers.length);
+
   meanOfAges.textContent = meanOfAgesCalculation.toFixed(2);
 }
 
 function handleKeyboardButtons() {
   inputTextDigited.addEventListener('keyup', () => {
-    const peopleFiltered = allUsers.filter((user) => {
-      return user.fullName
-        .toLowerCase()
-        .includes(inputTextDigited.value.toLowerCase());
-    });
-    filteredUsers = [...peopleFiltered];
-    console.log(filteredUsers);
+    if (inputTextDigited.value !== '') {
+      const peopleFiltered = allUsers.filter((user) => {
+        return user.fullName
+          .toLowerCase()
+          .includes(inputTextDigited.value.toLowerCase());
+      });
+      filteredUsers = [...peopleFiltered];
+    } else {
+      filteredUsers = [];
+    }
+
     renderFilterUsers();
     renderStatistics();
   });

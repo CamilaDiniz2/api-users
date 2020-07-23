@@ -4,6 +4,7 @@ body {
   background-color: #242121;
   color: #f4f4f4;
   font-family: 'Noto Sans HK', sans-serif;
+  overflow-x: hidden;
 }
 
 .mainArea {
@@ -11,6 +12,9 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  flex-wrap: wrap;
+
+  text-align: center;
 }
 
 .mainArea h1 {
@@ -29,18 +33,25 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .inputArea input[type='text'] {
-  width: 500px;
-  width: 50vw;
+  width: 90%;
   height: 36px;
   outline: none;
   border-radius: 8px;
+
+  margin-bottom: 32px;
+
+  font-size: 20px;
+  font-weight: 700;
+  color: #242121;
+  padding-left: 8px;
 }
 
 .inputArea button[type='button'] {
-  height: 32px;
+  height: 40px;
   width: 10vw;
   border: none;
   background-color: #35d80d;
@@ -58,21 +69,24 @@ body {
   opacity: 0.8;
   transition: 100ms;
 }
+
 .results h2 {
   font-size: 30px;
   line-height: 150%;
   margin-left: 32px;
 }
+
 #resultsStatisticsTab {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
   margin: 16px;
 }
 
 #resultsStatisticsTab h4 {
   width: 200px;
-  height: 150px;
+  height: 120px;
   background-color: #35d80d;
   border-top-left-radius: 32px;
   border-bottom-right-radius: 32px;
@@ -92,16 +106,18 @@ body {
 
 #resultsStatisticsTab h4 span {
   margin-top: 8px;
-  background-color: #a0b19ca2;
-  font-size: 28px;
+
+  font-size: 30px;
   padding: 8px;
   border-radius: 8px;
 }
 
 .filterUsers {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
@@ -116,6 +132,8 @@ body {
   border-top-left-radius: 32px;
   border-bottom-right-radius: 32px;
   margin: 32px;
+
+  min-width: 300px;
 
   color: #000;
   font-size: 16px;
@@ -140,4 +158,53 @@ body {
 .filterUsers .user .usersInfo {
   padding-left: 8px;
   border-left: 2px solid #000;
+}
+#filteredUsersTab h3 {
+  text-align: center;
+  font-size: 26px;
+}
+
+/* For desktop: */
+.col-1 {
+  width: 8.33%;
+}
+.col-2 {
+  width: 16.66%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.33%;
+}
+.col-5 {
+  width: 41.66%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-7 {
+  width: 58.33%;
+}
+.col-8 {
+  width: 66.66%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-10 {
+  width: 83.33%;
+}
+.col-11 {
+  width: 91.66%;
+}
+.col-12 {
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*='col-'] {
+    width: 100%;
+  }
 }
